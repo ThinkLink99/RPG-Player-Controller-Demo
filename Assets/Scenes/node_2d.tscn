@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b85vyvwbn33j8"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Player.cs" id="1_gbdlo"]
+[ext_resource type="Texture2D" uid="uid://iw8olxgh73dr" path="res://Assets/Sprites/16x16 Character/Idle_0.png" id="2_2xcwf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6cr6r"]
+radius = 4.0
+height = 16.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_gbdlo")
+
+[node name="Sprite" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_2xcwf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_6cr6r")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
